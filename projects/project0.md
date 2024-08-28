@@ -111,7 +111,7 @@ Next, to submit your project, you can run `submit` from your project directory.
 
 The `submit` command will pull your code from GitHub, not your local files. If you do not push your changes to GitHub, they will not be uploaded to Gradescope.
 
-If you encounter errors in this section (potentially mentioned [here](https://github.com/umd-cmsc330/fall24-ta/blob/p0/projects/project0/project0.md#troubleshooting-submit)), you can manually submit the file to Gradescope for now by uploading the p0.report file to the appropriate assignment, but we recommend to make sure the submit process works for future projects.
+If you encounter errors in this section (potentially mentioned [here](#troubleshooting-submit)), you can manually submit the file to Gradescope for now by uploading the p0.report file to the appropriate assignment, but we recommend to make sure the submit process works for future projects.
 
 Upon opening your submission on Gradescope, the tests will show if there are issues with the vital parts of your installation.
 
