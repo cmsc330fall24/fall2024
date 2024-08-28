@@ -290,7 +290,7 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu) using the
     - Run `opam init`
       - If it hangs at "Fetching repository information" press Enter. (This may take a while. Please be patient)
       - When prompted to modify `~/.profile` (or another file), **do not** modify the file, type `N` or `5`
-    - Run `eval opam env`
+    - Run `eval $(opam env)`
 3. Initialize OCaml
     - We will be using OCaml version 4.14.X. Run `ocaml -version` to check which version is currently installed
     - **If you are already on version 4.14.X, you can skip to step #4**, if not, follow the instructions below
