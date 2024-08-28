@@ -247,8 +247,8 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
     - **If you are already on 4.14.X, you can skip to step #5**, if not, follow the instructions below
       - If you are on another version, run `opam switch create 4.14.0` (This may take a while. Please be patient)
       - Ensure that all new shells open using the correct ocaml version. First, do `echo $SHELL`.
-        - If `echo $SHELL` gives `/bin/zsh`, run `echo "eval $(opam env --switch=4.14.0)" >> ~/.zshrc`
-        - If `echo $SHELL` gives `/bin/bash`, run `echo "eval $(opam env --switch=4.14.0)" >> ~/.bashrc`
+        - If `echo $SHELL` gives `/bin/zsh`, run `echo 'eval $(opam env --switch=4.14.0)' >> ~/.zshrc`
+        - If `echo $SHELL` gives `/bin/bash`, run `echo 'eval $(opam env --switch=4.14.0)' >> ~/.bashrc`
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 5. Install OCaml packages
@@ -258,8 +258,8 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
     - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and run the installation command provided
     - If prompted, just select the defaults
     - Append `~/.cargo/bin` to the `PATH` environment variable. First, do `echo $SHELL`.
-      - If `echo $SHELL` gives `/bin/zsh`, run `echo "export PATH=\"$HOME/.cargo/bin:$PATH\"" >> ~/.zshrc`
-      - If `echo $SHELL` gives `/bin/bash`, run `echo "export PATH=\"$HOME/.cargo/bin:$PATH\"" >> ~/.bashrc`
+      - If `echo $SHELL` gives `/bin/zsh`, run `echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.zshrc`
+      - If `echo $SHELL` gives `/bin/bash`, run `echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc`
       - **Restart** your shell
     - Optional: install the [Clippy](https://doc.rust-lang.org/clippy/) lint tool with `rustup component add clippy`
 7. Jump back to [Set Up SSH Authentication](#set-up-ssh-authentication) to complete the remaining steps for this project.
@@ -295,7 +295,7 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu) using the
     - We will be using OCaml version 4.14.X. Run `ocaml -version` to check which version is currently installed
     - **If you are already on version 4.14.X, you can skip to step #4**, if not, follow the instructions below
       - If you are on another version, run `opam switch create 4.14.0` (This may take a while. Please be patient)
-      - Run `echo "eval $(opam env --switch=4.14.0)" >> ~/.bashrc`
+      - Run `echo 'eval $(opam env --switch=4.14.0)' >> ~/.bashrc`
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 4. Install OCaml packages
@@ -304,7 +304,7 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu) using the
     - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and run the installation command provided
     - If prompted, just select the defaults
     - Append `~/.cargo/bin` to the `PATH` environment variable.
-      - Run `echo "export PATH=\"$HOME/.cargo/bin:$PATH\"" >> ~/.bashrc`
+      - Run `echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc`
       - **Restart** your shell
     - Optional: install the [Clippy](https://doc.rust-lang.org/clippy/) lint tool with `rustup component add clippy`
 6. Jump back to [Set Up SSH Authentication](#set-up-ssh-authentication) to complete the remaining steps for this project.
