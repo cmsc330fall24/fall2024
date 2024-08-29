@@ -212,7 +212,7 @@ You didn't push your changes to GitHub...
       which version is currently installed
     - **If you are already on 4.14.X, you can skip to step #6**, if not, follow the instructions below
       - If you are on another version, run `opam switch create 4.14.0` (This may take a while. Please be patient)
-      - Run `echo "eval $(opam env --switch=4.14.0)" >> ~/.bashrc`
+      - Run `echo 'eval $(opam env --switch=4.14.0)' >> ~/.bashrc`
       - **Restart** your shell
       - Ensure you are now on the correct version by running `ocaml -version`
 6. Install OCaml packages
@@ -222,7 +222,7 @@ You didn't push your changes to GitHub...
     - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and run the installation command provided. Make sure you are running the WSL command provided, *not* downloading Rust for Windows.
       - If prompted, just select the defaults
     - Append `~/.cargo/bin` to the `PATH` environment variable.
-      - Run `echo "export PATH=\"$HOME/.cargo/bin:$PATH\"" >> ~/.bashrc`
+      - Run `echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc`
       - **Restart** your shell
     - Optional: install the [Clippy](https://doc.rust-lang.org/clippy/) lint tool with `rustup component add clippy`
 8. Jump back to [Set Up SSH Authentication](#set-up-ssh-authentication) to complete the remaining steps for this project.
