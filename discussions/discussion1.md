@@ -10,8 +10,8 @@
 ### What is Git?
 
 1. Git is an open-source version control system
-2. Make sure to [set up an SSH key](https://github.com/cmsc330spring24/cmsc330spring24/blob/main/projects/project0.md#set-up-ssh-authentication) to securely authenticate yourself (refer to Project 0 for detailed instructions on how to do this).
-   - If you are on windows, you will need to install WSL before making the SSH key, you can also find instructions for this in [project 0](https://github.com/cmsc330spring24/cmsc330spring24/blob/main/projects/project0.md#windows)
+2. Make sure to [set up an SSH key](https://github.com/cmsc330fall24/cmsc330fall24/blob/main/projects/project0.md#set-up-ssh-authentication) to securely authenticate yourself (refer to Project 0 for detailed instructions on how to do this).
+   - If you are on windows, you will need to install WSL before making the SSH key, you can also find instructions for this in [project 0](https://github.com/cmsc330fall24/cmsc330fall24/blob/main/projects/project0.md#windows)
 
 ### Cloning Project Repositories
 
@@ -80,12 +80,12 @@ If GitHub is unable to automatically merge your commit changes, you'll have to a
 
 1. Clone your personal github classroom repo (if you haven't done so already)
    ```shell
-   $ git clone git@github.com:cmsc330spring24/projectX-<username>.git
+   $ git clone git@github.com:cmsc330fall24/projectX-<username>.git
    $ cd projectX-<username>
    ```
 2. Add the upstream remote path
    ```shell
-   $ git remote add upstream git@github.com:cmsc330spring24/projectX.git
+   $ git remote add upstream git@github.com:cmsc330fall24/projectX.git
    ```
 3. Pull the upstream commits from `upstream/main`:
    ```shell
