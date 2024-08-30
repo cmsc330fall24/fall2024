@@ -131,8 +131,9 @@ Let's practice submitting a simple python program to Gradescope. Note that this 
 #### 4. Late Tokens
 >[!IMPORTANT]
 > In projects, you have 3 24-hour extension tokens to use. You can only use one per project. Refer to class syllabus. This is done by modifying the contents of the LATE_TOKEN file from `false` to `true` and submitting after the deadline has passed.
-> 
-> Once you use a token (submit with the LATE_TOKEN contents = true), you **will not be able to change it even if you submit with contents = false later**. Once it is used, it is locked in!
+>
+> The LATE_TOKEN file will only be checked if you have submitted late (within 24 hours after the deadline).
+> Once you use a token (submit within 24 hours after the deadline with the LATE_TOKEN contents = true), you **will not be able to change it even if you submit with contents = false later**. Once it is used, it is locked in!
    - In your directory, you will see a file called LATE_TOKEN. If you want to use a late token (extend your deadline by 24 hours), change the contents of this file to **True**
    - We will "use" one now to see how it works. This will not count towards your 3.
    - Change LATE_TOKEN contents to True
