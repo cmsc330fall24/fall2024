@@ -194,7 +194,7 @@ You didn't push your changes to GitHub...
 2. Make sure you are on WSL 2 with [this test](https://learn.microsoft.com/en-us/windows/wsl/install#check-which-version-of-wsl-you-are-running)
 3. Install the basic dependencies:
     - Run `sudo apt update && sudo apt upgrade` to update your local package listing
-    - Run `sudo apt install ocaml ocaml-native-compilers camlp4 make m4 curl libssl-dev pkg-config unzip graphviz`
+    - Run `sudo apt install ocaml-native-compilers camlp4 make m4 curl libssl-dev pkg-config unzip graphviz`
 4. Install and initialize the OCaml package manager
     - Run `sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)` (when prompted for the installation location, just hit enter to select the default)
         - Run `opam --version`.  You should be on version 2 (followed by some versions; just make sure the major version is 2).
@@ -235,7 +235,7 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
 1. Install the Homebrew package manager
     - Run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` 
 2. Install the basic dependencies
-    - Run `brew install ocaml opam openssl graphviz`
+    - Run `brew install opam openssl graphviz`
       - if you get an error on running this command then it means that brew is currently not in your PATH. To add brew to your PATH run the command `eval "$(/opt/homebrew/bin/brew shellenv)"`
 3. Initialize the OCaml package manager
     - Run `opam init`
@@ -282,7 +282,7 @@ These instructions assume you have a Debian-based system (e.g. Ubuntu) using the
 
 1. Firstly, install the basic dependencies:
     - Run `sudo apt update` to update your local package listing
-    - Run `sudo apt install ocaml ocaml-native-compilers camlp4 make m4 curl libssl-dev pkg-config graphviz`
+    - Run `sudo apt install ocaml-native-compilers camlp4 make m4 curl libssl-dev pkg-config graphviz`
 2. Install and initialize the OCaml package manager
     - Run `sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)` (when prompted for the installation location, just hit enter to select the default)
       - Run `opam --version`.  You should be on version 2 (followed by some versions, just make sure the major version is 2).  Check out [the manual](https://opam.ocaml.org/doc/Install.html) if this is not the case, you may have to follow special directions for your particular operating system and version.
