@@ -10,7 +10,7 @@
 ### What is Git?
 
 1. Git is an open-source version control system
-2. Make sure to [set up an SSH key](https://github.com/cmsc330fall24/cmsc330fall24/blob/main/projects/project0.md#set-up-ssh-authentication) to securely authenticate yourself (refer to Project 0 for detailed instructions on how to do this).
+2. Make sure to [set up an SSH key](https://github.com/cmsc330fall24/fall2024/blob/main/projects/project0.md#set-up-ssh-authentication) to securely authenticate yourself (refer to Project 0 for detailed instructions on how to do this).
    - If you are on windows, you will need to install WSL before making the SSH key, you can also find instructions for this in [project 0](https://github.com/cmsc330fall24/cmsc330fall24/blob/main/projects/project0.md#windows)
 
 ### Cloning Project Repositories
