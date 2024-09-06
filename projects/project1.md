@@ -14,7 +14,7 @@ We recommend you get started right away, going from top to bottom. The problems 
 
 ### Ground Rules
 
-In your code, you may **only** use library functions found in the [`Stdlib` module](https://caml.inria.fr/pub/docs/manual-ocaml/libref/Stdlib.html) as well as `@` and `::`. This means you may **not** use any submodules of `Stdlib`, you may **not** use modules that link away from this page, you may **not** use the `List` module!
+In your code, you may **only** use library functions found in the [`Stdlib` module](https://caml.inria.fr/pub/docs/manual-ocaml/libref/Stdlib.html) (including `@` and `::`). This means you may **not** use any submodules of `Stdlib`, you may **not** use modules that link away from this page, you may **not** use the `List` module!
 
 You may **not** use any imperative structures of OCaml such as references (`ref` keyword, `:=` sign, single semicolons, etc.), loops, any function with type "unit") outside of testing.
 
