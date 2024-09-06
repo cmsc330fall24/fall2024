@@ -28,6 +28,19 @@
    remove_all [] 42 = []
    ```
 
+   ```
+   let rec fun remove_all lst x =
+      match lst with
+      |[] -> []
+      |x::t -> if x = target then remove_all t else x::t ;;
+
+   [1;2;3]   target = 1
+   1st call 1::[2;3]
+   2nd call 2::[3]
+   3rd call 3::[]
+   4th call []
+   ```
+
    ### `index_of lst x`
 
    - **Type:** `'a list -> 'a -> int`
@@ -43,45 +56,69 @@
    index_of [] 42 = -1
    ```
 
-2. Give the type for each of the following OCaml expressions:
+1. Give the type for each of the following OCaml expressions:
 
    > **NOTE:** Feel free to skip around, there are a lot of examples! 🙃
 
    ```ocaml
    [2a] fun a b -> b < a
+      'a -> 'b -> bool ??
+      a/b are int OR float, but b and a have to be the same type
+      - 1 < 2 OR 0.3 < 0.5
+      - 'a and 'b represents all types
 
    [2b] fun a b -> b + a > b - a
+      int -> int -> bool
 
    [2c] fun a b c -> (int_of_string c) * (b + a)
+      int -> int -> string -> int
 
    [2d] fun a b c -> (if c then a else a) * (b + a)
+      int -> int -> bool -> int
 
    [2e] fun a b c -> [ a + b; if c then a else a + b ]
+      int -> int -> bool -> int
 
    [2f] fun a b c -> if a b != a c then (a b) else (c < 2.0)
-
+      a b    ----> a is a function and b is a parameter to a
+      so (a b != a c) is a function
+      c is a float because its being compared to 2.0
+      a is a function that takes in one element and outputs a boolean, this element has to be a float since c was an argument for a and c is a float
+      then b is also a float
+      (float -> bool) -> float -> float -> bool
+   
    [2g] fun a b c d -> if a && b < c then d + 1 else b
+         bool -> b' -> c' -> int
+         bool -> b' -> c' -> int  (b is an int bc d has to be an int if its next to the + operator to be added to 1)
+         bool -> int -> int -> int (c is an int since b is an int)
    ```
-
-3. Write an OCaml expression for each of the following types:
+      
+2. Write an OCaml expression for each of the following types:
 
    ```ocaml
    [3a] int * bool list
+      (5, [true; false]) (two bool)
 
    [3b] (int * float) -> int -> float -> bool list
-
+      let foo abc = if a = (1,2.0) && a = (b,c) then [true] else [false]
+      - because of the "let" foo can be used later
+      
    [3c] float -> string -> int * bool
-
+      if string_of_float a == b then (2, true) else (2, false)??
+   
    [3d] (int -> bool) -> int -> bool list
+         
 
    [3e] ('a -> 'b) -> 'a -> 'a * 'b list
-
+      fun f a -> (a, [f a])
+      - because there's no "let", this function has no name and cant be called later
+      
    [3f] ('a -> 'b) -> ('b -> 'c) -> 'a -> 'c
 
    [3g] 'a -> 'b list -> 'a -> 'a * 'a
    ```
 
-4. Give the type of the following OCaml function:
+3. Give the type of the following OCaml function:
 
    ```ocaml
    let rec f p x y =
@@ -91,7 +128,7 @@
       | (_, _) -> failwith "error";;
    ```
 
-5. What values do `x`, `y`, and `z` bind to in the following code snippet?
+4. What values do `x`, `y`, and `z` bind to in the following code snippet?
 
    ```ocaml
    let x = match ("lol", 7) with
@@ -99,6 +136,11 @@
       | ("lol", _)   -> "two"
       | ("lol", 7)   -> "three"
    ;;
+      answer: two, since 7 is included in _
+      - in general, you want your match to cover all input cases
+      - let tup = (5,7) in
+         match tup with
+         | (a,b) -> ___
 
    let y = match (2, true) with
       | (1, _)       -> "one"
@@ -106,6 +148,7 @@
       | (_, _)       -> "three"
       | (_, true)    -> "four"
    ;;
+      answer: three
 
    let z = match [1;2;4] with
       | []           -> "one"
@@ -113,6 +156,9 @@
       | 1::2::t      -> "three"
       | _            -> "four"
    ;;
+      answer: three
+      - you can match lists using cons
+      - 1::2::4::t is also valid 
    ```
 
 More information + examples can be found in the [spring23 OCaml discussion](https://github.com/cmsc330-umd/spring23/tree/main/discussions/d3_ocaml).
