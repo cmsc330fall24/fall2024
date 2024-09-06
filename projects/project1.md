@@ -2,21 +2,25 @@
 
 Due: Friday, September 13, 2024 at 11:59 PM 
 
-Points: 35 public/55 semipublic/10 secret. See below for definitions
+Points: 35 public/55 semipublic/10 secret. See below for definitions.
 
 **This is an individual assignment. You must work on this project alone.**
 
 ## Introduction
 
-The goal of this project is to get you familiar with programming in OCaml. You will have to write a number of small functions, each of which is specified in four sections below.
+The goal of this project is to get you familiar with programming using OCaml. You will have to write a number of small functions, each of which is specified in four sections below.
 
-We recommend you get started right away, going from top to bottom. The problems will get increasingly challenging, and in some cases later problems can take advantage of earlier solutions.
+We recommend you get started right away, going from top to bottom. The problems will get increasingly challenging, and in some cases, later problems can take advantage of earlier solutions.
 
 ### Ground Rules
 
-In your code, you may **only** use library functions found in the [`Stdlib` module](https://caml.inria.fr/pub/docs/manual-ocaml/libref/Stdlib.html) and the `@` operator. (This means you may **not** use any submodules of `Stdlib`, you may **not** use modules that link away from this page, you may **not** use the `List` module!) You may **not** use any imperative structures of OCaml such as references. 
+In your code, you may **only** use library functions found in the [`Stdlib` module](https://caml.inria.fr/pub/docs/manual-ocaml/libref/Stdlib.html) and the `@` operator. This means you may **not** use any submodules of `Stdlib`, you may **not** use modules that link away from this page, you may **not** use the `List` module!
+
+You may **not** use any imperative structures of OCaml such as references (`ref` keyword, `:=` sign, single semicolons, etc.), loops, any function with type "unit") outside of testing.
 
 ### Testing & Submitting
+
+**Check out the project here:** https://classroom.github.com/a/oe3tUSid
 
 The project will include the following types of tests:
 
@@ -24,34 +28,40 @@ The project will include the following types of tests:
 - Semipublic test code is hidden and the Gradescope test names will specify which functions are tested.
 - Secret test code is hidden and the names will not divulge which functions are tested. However, whether you pass will still be visible on Gradescope as soon as you submit.
 
-You should test your project in the following ways:
+You should test your project *locally* in the following ways:
 
-1. Run the public tests. These tests are the same as those on gradescope.
-2. Write student tests in `test/student/student.ml` to best predict what you think the non-public tests are. You can use the public tests as a template
+1. Run the public tests. These tests are the same as those on Gradescope.
+2. Write student tests in `test/student/student.ml` to best predict what you think the non-public tests are. A template for this is provided.
 
-Relying on gradescope for testing is poor practice and not recommended. Additionally, staff cannot tell you what the semipublic and secret tests are.  
+Relying on Gradescope for testing is poor practice and not recommended. Additionally, staff cannot tell you what the semipublic and secret tests are.  
 
-Running the public tests locally can by done using the command below:
+To run public tests locally, first build your code with 
 
-`dune runtest -f`. This will run both public and student tests. If you want to only test a specific file, say your student tests file, run `dune runtest test/student`, replacing the path if your testing files are located in a directory elsewhere. We recommend you write student tests in `test/student/student.ml`.
+`dune build`
 
-Submitting to Gradescope can be done using the exact same method used for project 0. Add your changes, commit them, push them, and then run `submit` keyword.
+Then run all tests in your project using 
 
->[!IMPORTANT]
-> In projects, you have 3 24-hour extension tokens to use. You can only use one per project. Refer to class syllabus. This is done by modifying the contents of the LATE_TOKEN file from `false` to `true` and submitting after the deadline has passed.
->
-> The LATE_TOKEN file will only be checked if you have submitted late (within 24 hours after the deadline).
-> Once you use a token (submit within 24 hours after the deadline with the LATE_TOKEN contents = true), you **will not be able to change it even if you submit with contents = false later**. Once it is used, it is locked in!
+`dune runtest -f`
 
-You can interactively test your code by doing `dune utop src` (assuming you have `utop`). Then you should be able to use any of the functions located in the `src/` directory. All of your commands in `utop` need to end with two semicolons (i.e. `;;`), otherwise it will appear that your terminal is hanging.
+If you get stuck in an infinite loop, exit the tests using `Ctrl-C`. Do *not* use `Ctrl-Z`, as this will only suspend the process, not end it. 
+
+The command above will run both public and student tests. If you want to only test a using specific test file, say your student tests file, run `dune runtest -f test/student`, replacing the path if your testing files are located in a directory elsewhere. We recommend you write student tests in `test/student/student.ml`.
 
 To run a single test you need to do the following:
-1. Build using `dune build`. This should create a `_build` folder or similar
-2. Know where the test executable is (in this case, the publics): `ls _build/default/test/public`
-3. Get the name of the test you want to run: `./_build/default/test/public/public.exe -list-test`
-4. Using that name, run that test: `./_build/default/test/public/public.exe -only-test public:0:abs`
+1. Build using `dune build`. This should create a `_build` folder or similar.
+2. Find where the test executable is (for example, the public test executable might have this filepath):
 
-Besides the provided public tests, you will also find the file **student.ml** on `test/student/`, where you'll be able to add OUnit tests of your own. More detailed information about writing tests can be found [here](https://www.youtube.com/watch?v=C36JnAcClOQ). Here are the timestamps for the topics covered in the video:
+   `_build/default/test/public/public.exe`
+4. Get the names of all the tests that are part of that executable by running that executable with the `-list-test` argument:
+
+   `_build/default/test/public/public.exe -list-test`
+6. Using the name of the test you want, run that test (for example, this runs the test called `public:0:abs`):
+
+   `./_build/default/test/public/public.exe -only-test public:0:abs`
+
+In addition, you can interactively test your code by running `dune utop src` (assuming you have `utop` installed properly). This allows you to use any of the functions located in the `src/` directory in this `utop` instance. All of your commands in `utop` need to end with two semicolons (i.e. `;;`), otherwise it will appear that your terminal is hanging. Exit `utop` using `Ctrl-D`, `Cmd-D`, or typing `#quit;;`.
+
+More detailed information about writing/executing tests can be found [here](https://www.youtube.com/watch?v=C36JnAcClOQ). Here are the timestamps for the topics covered in the video:
 
 - Installing necessary software: [00:46](https://www.youtube.com/watch?v=C36JnAcClOQ&t=46s)
 - How to build and test: [01:14](https://www.youtube.com/watch?v=C36JnAcClOQ&t=74s)
@@ -61,6 +71,14 @@ Besides the provided public tests, you will also find the file **student.ml** on
 - Understanding test cases: [16:00](https://www.youtube.com/watch?v=C36JnAcClOQ&t=960s)
 - Writing your own test cases: [19:20](https://www.youtube.com/watch?v=C36JnAcClOQ&t=1160s)
 
+Submitting to Gradescope can be done using the exact same method used for project 0. Add your changes, commit them, push them, and then run `submit` keyword. Reminders: 1) You *must* properly push to GitHub before submitting, as Gradescope takes the files from there and not from your local files. 2) Do not manually upload files to Gradescope, only use the submit command or the GitHub upload option on Gradescope.
+
+>[!IMPORTANT]
+> You have 3 24-hour extension tokens to use for the semester. *You can only use one per project*. Refer to class syllabus. This is done by modifying the contents of the LATE_TOKEN file from `false` to `true` and submitting after the deadline has passed.
+>
+> The LATE_TOKEN file will only be checked if you have submitted late (within 24 hours after the deadline).
+> Once you use a token (submit within 24 hours after the deadline with the LATE_TOKEN contents = true), you **will not be able to change it even if you submit with contents = false later**. Once it is used, it is locked in!
+
 ### Project Files
 
 The following are the relevant files for your code:
@@ -68,17 +86,18 @@ The following are the relevant files for your code:
 - OCaml Files
     - **src/basics.ml**: You will **write your code here**, in this file. 
     - **src/basics.mli**: This file is used to describe the signatures of all the functions in the module.  *Do not modify this file*; Gradescope will use the original version.
-    - **src/funs.ml**: This file includes implementation for some useful higher order functions. These are required for Part 4, but can be used throughout the project if you wish. *Do not modify this file* Gradescope will use the original version.
+    - **src/funs.ml**: This file includes implementation for some useful higher order functions. These are required for Part 4, but can be used throughout the project if you wish. *Do not modify this file*; Gradescope will use the original version.
     - **src/funs.mli**: This file is used to describe the signatures of all the functions in the funs.ml.  *Do not modify this file*; Gradescope will use the original version.
 
 ### Important Notes about this Project
 
 1. Some parts of this project are additive, meaning your solutions to earlier functions can be used to aid in writing later functions. Think about this in parts 3 and 4.
-2. In sections 1, 2, and 3, you may add helper functions as you wish, and these helper functions may be recursive. If you create a recursive helper function, the main function that calls the recursive helper does not also have to be recursive/have the `rec` keyword in its function header.
-3. In section 4, you may create helper functions, but they cannot be recursive.
+2. In sections 1, 2, and 3, (*not* 4) you may add any helper functions you wish for, and these helper functions may be recursive. If you create a recursive helper function, the main function that calls the recursive helper does not also have to have the `rec` keyword in its function header.
+3. In section 4, you *may* create helper functions, but they **cannot be recursive**, nor can the helpers themselves use recursive helpers.
 4. You may move around the function definitions. In OCaml, in order to use one function inside of another, you need to define the function before it is called. For example, if you think that a function from Part 2 can be used to help you implement a function in Part 1, you can move your implementation of the function from the Part 2 section to before the function in Part 1. As long as you still pass the tests and you haven't created a syntax error, you are fine.
 5. Pay special notice to a function's type. Often times, you can lose sight of what you're trying to do if you don't remind yourself of the types of the arguments and the type of what you're trying to return.
 6. You may rename arguments however you would like, but **do not modify function's name**, and **do not change the amount and order of arguments**. Doing so will cause you to fail the function's tests.
+7. Double-check the Ground Rules at the top of the ReadMe about what OCaml features you are allowed to use for this project.
 
 # Part 1: Non-Recursive Functions
 
@@ -133,8 +152,8 @@ Implement the following functions that do not require recursion. Accordingly, th
 
 # Part 2: Recursive Functions
 
-Implement the following functions using recursion. You will lose points if this rule is not followed.
-If you create a recursive helper function, the main function that calls the recursive helper does not have to be recursive/have the `rec` keyword in its function header.
+Implement the following functions **using recursion**. You will lose points if this rule is not followed.
+If you create a recursive helper function, the main function that calls the recursive helper does not have to have the `rec` keyword in its function header.
 
 #### `fibonacci n`
 
@@ -297,10 +316,10 @@ of
 
 # Part 4: Higher Order Functions
 
-Write the following functions using `map`, `fold`, or `fold_right` as defined in the file `funs.ml`. You **must** use `map`, `fold`, or `fold_right` to complete these functions, so none of the functions in Part 4 may be defined using the `rec` keyword. 
-- You also **may not** create *recursive helper functions*, You will lose points if this rule is not followed. 
-- You **may** create *non-recursive helper functions* as you see fit for all of part 4.
-- You **may** use functions created in previous parts, as long as they **do not use recursion**.
+Write the following functions using `map`, `fold`, or `fold_right` as defined in the file `funs.ml`. You **must** use `map`, `fold`, or `fold_right` to complete these functions, so *none of the functions in Part 4 may be defined using the `rec` keyword*. 
+- You also **may not** create recursive helper functions, You will lose points if this rule is not followed. 
+- You **may** create *non-recursive* helper functions as you see fit for all of part 4.
+- You **may** use functions created in previous parts, as long as they **do not use recursion**, not even in their own helpers.
 
 #### `is_there lst x`
 
@@ -327,7 +346,7 @@ Write the following functions using `map`, `fold`, or `fold_right` as defined in
 #### `uniq lst`
 
 - **Type**: `'a list -> 'a list`
-- **Description**: Given a list, returns a list with all duplicate elements removed. *Order does not matter, in the output list.*
+- **Description**: Given a list, returns a list with all duplicate elements removed. *Order does not matter in the output list.*
 - **Examples**:
   ```ocaml
   uniq [] = []
@@ -339,6 +358,7 @@ Write the following functions using `map`, `fold`, or `fold_right` as defined in
 
 - **Type**: `int -> 'a list -> 'a list`
 - **Description**: Returns a list of every `x`th value from `lst`
+- **Assumptions**: `x` is a positive number >= 1.
 - **Examples**:
   ```ocaml
   every_xth 2 [1;2;3;4] = [2;4]
