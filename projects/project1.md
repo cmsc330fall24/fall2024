@@ -1,6 +1,6 @@
 # Project 1: OCaml Warmup
 
-Due: Friday, September 13, 2024 at 11:59 PM 
+Due: Sunday, September 15, 2024 at 11:59 PM 
 
 Points: 35 public/55 semipublic/10 secret. See below for definitions.
 
