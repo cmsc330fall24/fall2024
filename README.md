@@ -11,4 +11,4 @@ This repository will have links to projects and discussions.
   + [Discussion 2](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2.md)
 
 ## Discussion Solutions
-  + [Discussion 2 Solution](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2_sol.md)
+  + [Discussion 2 Solutions](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2_sol.md)
