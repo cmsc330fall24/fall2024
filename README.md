@@ -1,4 +1,4 @@
-# CMSC330 Fall 2024
+#CMSC330 Fall 2024
 
 This repository will have links to projects and discussions.
 
@@ -8,4 +8,7 @@ This repository will have links to projects and discussions.
 
 ## Discussions
   + [Discussion 1](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion1.md)
-  + [Discussion 2](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2.md) 
+  + [Discussion 2](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2.md)
+
+## Discussion Solutions
+  + [Discussion 2 Solution](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2_sol.md)
