@@ -254,6 +254,7 @@ Check the [Special macOS Instructions](#special-macos-instructions) to check if 
 5. Install OCaml packages
     - Run `opam install gradescope_submit ocamlfind ounit utop dune qcheck ocamlformat`
       - If you get the message "opam believes some required external dependencies are missing", select "Run brew to install them"
+      - Run `eval $(opam config env)`
 6. Install Rust
     - Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and run the installation command provided
     - If prompted, just select the defaults
