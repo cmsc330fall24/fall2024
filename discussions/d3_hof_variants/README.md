@@ -127,7 +127,7 @@ This recursively defines a `tree` to either be a:
 
 #### `tree_add x tree`
 
-- **Type**: `int tree -> int tree`
+- **Type**: `int -> int tree -> int tree`
 - **Description**: Given an `int tree`, return a new `int tree` with the same values in the old tree incremented by `x`.
 - **Examples**:
 
