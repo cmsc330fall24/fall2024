@@ -62,7 +62,7 @@ Its type is `person -> person -> int`. It follows the typical -1, 0, 1 conventio
   ```ocaml
   let comparator1 p1 p2 = 
     if p1.age < p2.age then -1
-    else if p1.age == p2.age then 0
+    else if p1.age = p2.age then 0
     else 1
   ```
 
@@ -151,7 +151,7 @@ Other examples of valid `condition`s are:
    ```ocaml
    let comparator1 p1 p2 = 
     if p1.age < p2.age then -1
-    else if p1.age == p2.age then 0
+    else if p1.age = p2.age then 0
     else 1
 
    condition2 = Age(fun age -> age < 90)
