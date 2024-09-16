@@ -18,6 +18,12 @@ To test locally, run `dune runtest -f`. Besides the provided public tests, you w
 
 You can interactively test your code by running `dune utop src`, which will include your source files. (As usual, all of your commands in `utop` need to end with two semicolons (`;;`), otherwise it will appear as if your terminal is hanging)
 
+### Check Out Link:
+- Please readme in its entirety before posting on piazza.
+- Please read the pinned project2 FAQ post on piazza before post posting on piazza.
+- [https://classroom.github.com/a/sqzQqbFw](https://classroom.github.com/a/sqzQqbFw)
+
+  
 ## Part 1: Database Design
 
 Create a program that stores `person`s in a database which can later be queried. 
