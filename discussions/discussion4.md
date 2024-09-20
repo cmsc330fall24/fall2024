@@ -148,6 +148,16 @@ This shows the importance of combining multiple properties + unit tests for ensu
 From Spring 2024 final:
 ![image](https://hackmd.io/_uploads/H1BVzVqaC.png)
 
+#### Solution:
+<details>
+  <summary><b>Click here!</b></summary>
+  
+```ocaml
+1: not valid property, na, valid property function
+
+2: valid property, will catch bugs, valid property function
+```
+</details>
 
 ## Review - Regular Expressions
 There are many patterns regex can describe aside from string literals.
