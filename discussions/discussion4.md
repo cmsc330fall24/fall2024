@@ -3,7 +3,7 @@
 ## Reminders
 
 1. Quiz 2 next **Friday, September 27rd** 
-- Topic list will be released on Piazza!
+- Topic list [here](https://piazza.com/class/lzthtu8sxwsmm/post/292)!
 2. Project 2 released, due **Thursday Sept 26 @ 11:59 PM**
 - More info + FAQs: [@248](https://piazza.com/class/lzthtu8sxwsmm/post/248)
 
