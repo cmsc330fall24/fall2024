@@ -128,7 +128,7 @@ then we did not accurately translate the property, since this code doesn't actua
 
 **So we can ask: given a property $p$ and a function $f$ encoding $p$, does $f$ actually represent $p$?**
 
-Finally, while the property could be valid, and while the function we write could be a correct encoding, it is possible the property we are testing is not meaningful. Consider the following:
+Finally, while the property could be valid, and while the property we write could be a correct encoding, it is possible the property does not catch bugs in our code. Consider the following:
 
 ```ocaml
 rev (rev lst) = lst
@@ -138,7 +138,8 @@ This is clearly a valid property from our discussion earlier, and a valid encodi
 ```ocaml
 let rev lst = lst
 ```
-Then this property will not actually detect the bug in my code (namely the fact that `rev` is completely incorrect).
+Then this property will not actually detect the bug in my code (namely the fact that `rev` is completely incorrect).\
+This shows the importance of combining multiple properties + unit tests for ensuring program correctness.
 
 **So we can ask, given a valid property $p$, and a buggy implementation of this function $f$, will the property $p$ catch any bugs in $f$?**
 
