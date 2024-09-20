@@ -207,7 +207,7 @@ There are many patterns regex can describe aside from string literals.
 
 There are certain string patterns that **cannot** be expressed with regex. This is because regex is memoryless; as they cannot keep track of what they have already seen.
 
-As an example, consider a palindrome "racecar". We can't track how many of each character we have previously seen (assuming our regex engine doesn't have backreferences).
+As an example, consider a pattern that represents all palindromes, e.g. "racecar". We can't track how many of each character we have previously seen (assuming our regex engine doesn't have backreferences).
 
 ## Exercises - Regular Expressions
 
