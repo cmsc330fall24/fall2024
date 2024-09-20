@@ -2,7 +2,7 @@
 
 ## Reminders
 
-1. Quiz 2 next **Friday, September 27rd**\
+1. Quiz 2 next **Friday, September 27th**\
     Topic list [here](https://piazza.com/class/lzthtu8sxwsmm/post/292)!
 2. Project 2 released, due **Thursday Sept 26 @ 11:59 PM**\
     More info + FAQs: [@248](https://piazza.com/class/lzthtu8sxwsmm/post/248)
@@ -154,7 +154,7 @@ There are many patterns regex can describe aside from string literals.
 
 - **Concatenation (and)**: `/ab/` We use this to accept something that satisfies a and b in that order, where a and b can denote sub-regex.
     - Ex. `/a/` matches "a", `/b/` matches "b", so `/ab/` matches "ab"
-    - Ex. `/(a|b)/` matches "a" or "b", `c` matches "c", so `/(a|b)c/` matches "ab" or "ac"
+    - Ex. `/(a|b)/` matches "a" or "b", `c` matches "c", so `/(a|b)c/` matches "ac" or "bc"
 - **Union (or)**: `/a|b|c/` We use this to accept something from given choices. **Note** that a, b, or c can also denote sub-regex if parentheses are specified.
     - Ex. `/a|b|c/` matches "a" or "b" or "c"
 - **Precedence (parentheses)**: `/(a)/` are used to enforce order of evaluation and capture groups.
