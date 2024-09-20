@@ -233,7 +233,7 @@ Write a regex pattern for each of the following scenarios (or explain why you ca
     - Includes: "(123)-456-7890", "(111)-222-3333"
     - Excludes: "123-456-7890", "1234567890"
 4. **Exactly** matches a string email following the format [Directory ID]@umd.edu where [Directory ID] is any sequence consisting of lowercase letters (a-z), uppercase letters (A-Z), or digits (0-9) with length >= 1.
-    - Includes: "colemak123@umd.edu", "ArStDhNeIo@umd.edu", "a@umd.edu"
+    - Includes: "colemak123@umd.edu", "ArStDhNeIo@umd.edu", "b@umd.edu"
     - Excludes: "qwerty@gmail.com", "@umd.edu"
 5. Matches a string that has more 7s, 8s, and 9s than 1s, 2s, and 3s.
     - Includes: "7891", "123778899", "12789", "8"
