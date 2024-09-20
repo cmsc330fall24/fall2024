@@ -75,6 +75,13 @@ let x = ref 0;;
 let f _ r = r;;
 f (x:=2) (!x)
 ```
+#### Solution:
+<details>
+  <summary><b>Click here!</b></summary>
+Ocaml's order of argument evaluation is not defined. On some systems it's left to right on others it's right to left.
+    
+On my system, <b>f</b> evaluates to <b>0</b>, but on your system it may evaluate to <b>2</b>!   
+</details>
 
 ## Property-Based Testing
 
