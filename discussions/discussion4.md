@@ -152,7 +152,7 @@ From Spring 2024 final:
 <details>
   <summary><b>Click here!</b></summary>
   
-```ocaml
+```
 1: not valid property, na, valid property function
 
 2: valid property, will catch bugs, valid property function
