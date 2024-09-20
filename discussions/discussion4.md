@@ -2,10 +2,10 @@
 
 ## Reminders
 
-1. Quiz 2 next **Friday, September 27rd** 
-- Topic list [here](https://piazza.com/class/lzthtu8sxwsmm/post/292)!
-2. Project 2 released, due **Thursday Sept 26 @ 11:59 PM**
-- More info + FAQs: [@248](https://piazza.com/class/lzthtu8sxwsmm/post/248)
+1. Quiz 2 next **Friday, September 27rd**\
+    Topic list [here](https://piazza.com/class/lzthtu8sxwsmm/post/292)!
+2. Project 2 released, due **Thursday Sept 26 @ 11:59 PM**\
+    More info + FAQs: [@248](https://piazza.com/class/lzthtu8sxwsmm/post/248)
 
 ## Topic List
 
@@ -27,7 +27,7 @@ Here, `z` is bound to 3. It is immutable.  `x` and `y` are bound to a reference.
 ```ocaml
 x := 4;;
 ```
-will update the `contests` to 4. `x` and `y` now point to the value 4. 
+will update the `contents` to 4. `x` and `y` now point to the value 4. 
 ```ocaml
 !y;;
   - : int = 4
