@@ -1,4 +1,4 @@
-#CMSC330 Fall 2024
+# CMSC330 Fall 2024
 
 This repository will have links to projects and discussions.
 
@@ -11,6 +11,7 @@ This repository will have links to projects and discussions.
   + [Discussion 1](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion1.md)
   + [Discussion 2](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2.md)
   + [Discussion 3](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/d3_hof_variants/README.md)
+  + [Discussion 4](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion4.md)
 
 ## Discussion Solutions
   + [Discussion 2 Solutions](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2_sol.md)
