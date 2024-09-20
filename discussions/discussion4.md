@@ -145,37 +145,34 @@ From Spring 2024 final:
 There are many patterns regex can describe aside from string literals.
 
 - **Concatenation (and)**: `/ab/` We use this to accept something that satisfies a and b in that order, where a and b can denote sub-regex.
-    - ex. `/a/` matches "a", `/b/` matches "b", so `/ab/` matches "ab"
-    - ex. `/(a|b)/` matches "a" or "b", `c` matches "c", so `/(a|b)c/` matches "ab" or "ac"
+    - Ex. `/a/` matches "a", `/b/` matches "b", so `/ab/` matches "ab"
+    - Ex. `/(a|b)/` matches "a" or "b", `c` matches "c", so `/(a|b)c/` matches "ab" or "ac"
 - **Union (or)**: `/a|b|c/` We use this to accept something from given choices. **Note** that a, b, or c can also denote sub-regex if parentheses are specified.
+    - Ex. `/a|b|c/` matches "a" or "b" or "c"
 - **Precedence (parentheses)**: `/(a)/` are used to enforce order of evaluation and capture groups.
-    - ex. `/a|bc/` matches "a" or "bc". This is the same as `/a|(bc)/`
-    - ex. `/(a|b)c/` matches "ab" or "ac"
+    - Ex. `/a|bc/` matches "a" or "bc". This is the same as `/a|(bc)/`
+    - Ex. `/(a|b)c/` matches "ab" or "ac"
 - **Sets**: `/[abc]/` We use this to accept one character from the given choices.
-    - `/[abc]/` matches "a" or "b" or "c"
+    - Ex. `/[abc]/` matches "a" or "b" or "c"
 - **Ranges**: `/[a-z]/`, `/[c-k]/`, `/[A-Z]/`, `/[0-9]/` We use these ranges, also known as character classes, to accept characters within a specified range (inclusive).
-    - Ex. `/[a-z]/` matches any lowercase letter.
-    - Ex. `/[c-k]/` matches letters c to k inclusive.
-    - Ex. `/[A-Z]/` matches any uppercase letter.
-    - Ex. `/[0-9]/` matches any digit.
-    - Ex. `/[a-z0-9]` matches any lowercase letter or digit.
+    - Ex. `/[a-z]/` matches any lowercase letter
+    - Ex. `/[c-k]/` matches letters c to k inclusive
+    - Ex. `/[A-Z]/` matches any uppercase letter
+    - Ex. `/[0-9]/` matches any digit
+    - Ex. `/[a-z0-9]/` matches any lowercase letter or digit
 - **Negation**: `/[^abc]/` `/[^a-z]/` `/[^0-9]/` We use these to exclude a set of characters.
     - Ex. `/[^abc]/` matches with any character other than "a", "b", or "c"
-    - Ex. `/[^a-z]]/` matches with any character that is not a lowercase letter.
-    - Ex. `/[^0-9]/` matches with any character that is not a digit.
+    - Ex. `/[^a-z]]/` matches with any character that is not a lowercase letter
+    - Ex. `/[^0-9]/` matches with any character that is not a digit
     - Note that the use of "^" differs from the beginning of a pattern
 - **Meta Characters**: `/\d/`, `/\D/`, `/\s/`, `\w`, `\W` We use these characters to match on any of a particular type of pattern.
     - ex. `/\d/` matches any digit (equivalent to `/[0-9]/`)
-    - ex. `/\D/` matches any character that is not a digit (equivalent to `/[^0-9]/`).
-    - ex. `/\s/` matches any whitespace character (spaces, tabs, or newlines).
-    - ex. `/\w/` matches any alphanumeric character from the basic Latin alphabet, including the underscore (equivalent to `/[A-Za-z0-9_]/`).
-    - ex. `/\W/` matches any character that is not a word character from the basic Latin alphabet (equivalent to /`[^A-Za-z0-9_]/`).
+    - ex. `/\D/` matches any character that is not a digit (equivalent to `/[^0-9]/`)
+    - ex. `/\s/` matches any whitespace character (spaces, tabs, or newlines)
+    - ex. `/\w/` matches any alphanumeric character from the basic Latin alphabet, including the underscore (equivalent to `/[A-Za-z0-9_]/`)
+    - ex. `/\W/` matches any character that is not a word character from the basic Latin alphabet (equivalent to `/[^A-Za-z0-9_]/`)
 - **Wildcard**: `.` We use this to match on **any** single character. Note: to use a literal `.`, we must escape it, i.e. `/\./`
-- **Beginning of a pattern**: `/^hello/` The string must begin with "hello".
-    - Ex. `/^hello/` matches with "helloඞ" but does not match with "ඞhello"
-- **End of a pattern**: `/bye$/` The string must end with "bye".
-    - Ex. `/bye$/` matches with "ඞbye" but does not match with "byeඞ"
-- **Repetitions**: `/a*/`, `/a+/`, `/a?/`, `/a{3}/`, `/a{4,6}/`, `/a{4,}/`, `/a{,4}/`,
+- **Repetitions**: `/a*/`, `/a+/`, `/a?/`, `/a{3}/`, `/a{4,6}/`, `/a{4,}/`, `/a{,4}/`:
     - Ex. `/a*/` matches with 0 or more a's
     - Ex. `/a+/` matches with at least one a
     - Ex. `/a?/` matches with 0 or 1 a
@@ -184,10 +181,21 @@ There are many patterns regex can describe aside from string literals.
     - Ex. `/a{4,}/` matches with at least 4 a's
     - Ex. `/a{,4}/` matches with at most 4 a's
     - **Note**: a can denote a sub-regex
+- **Partial Match**: `/a/` and `/abc/` These patterns can match any part of a string that contains the specified characters.
+    - Ex. `/a/` matches "a", "ab," "yay," or "apple"
+    - Ex. `/abc/` matches "abc", "abcdefg," "xyzabcjklm," or "abc123"
+    - **Note**: They do not require the specified sequence to be at the beginning or end of the string
+- **Beginning of a pattern**: `/^hello/` The string must begin with "hello".
+    - Ex. `/^hello/` matches with "hellocliff" but does not match with "cliffhello"
+- **End of a pattern**: `/bye$/` The string must end with "bye".
+    - Ex. `/bye$/` matches with "cliffbye" but does not match with "byecliff"
+- **Exact Match**: `/^hello$/` The string must be exactly "hello".
+    - Ex. `/^hello$/` only matches "hello" and no other string
+    - **Note**: Enforces both the beginning and end of the string
 
-> Question: *Can every string pattern be expressed with a regex?*
+> **Question**: *Can every string pattern be expressed with a regex?*
 
-Answer: No!
+**Answer**: No!
 
 There are certain string patterns that **cannot** be expressed with regex. This is because regex is memoryless; as they cannot keep track of what they have already seen.
 
@@ -197,19 +205,19 @@ As an example, consider a palindrome "racecar". We can't track how many of each 
 
 Write a regex pattern for each of the following scenarios (or explain why you cannot):
 
-1. Alternates between capital & lowercase letters, starting with capital letters.
-    - Includes: "AaBbCc", "DlFsPrOa"
+1. **Exactly** matches a string that alternates between capital & lowercase letters, starting with capital letters.
+    - Includes: "AaBbCc", "DlFsPrOa", "HiWoRlD"
     - Excludes: "aAbBcC", "aaa", "123"
-2. An even number of 3s, and then an odd number of 4s.
+2. Matches a string that contains an even number of 3s, and then an odd number of 4s.
     - Includes: "3333444", "334", "3333334444444", "4"
     - Excludes: "34", "33344", "334444", "1111222"
-3. A phone number following the format (XXX)-XXX-XXXX where X represents a digit.
+3. Matches a string that contains a phone number following the format (XXX)-XXX-XXXX where X represents a digit.
     - Includes: "(123)-456-7890", "(111)-222-3333"
     - Excludes: "123-456-7890", "1234567890"
-4. An email following the format [Directory ID]@umd.edu where [Directory ID] is any sequence consisting of lowercase letters (a-z), uppercase letters (A-Z), or digits (0-9) with length >= 1.
+4. **Exactly** matches a string email following the format [Directory ID]@umd.edu where [Directory ID] is any sequence consisting of lowercase letters (a-z), uppercase letters (A-Z), or digits (0-9) with length >= 1.
     - Includes: "colemak123@umd.edu", "ArStDhNeIo@umd.edu", "a@umd.edu"
     - Excludes: "qwerty@gmail.com", "@umd.edu"
-5. Has more 7s, 8s, and 9s than 1s, 2s, and 3s.
+5. Matches a string that has more 7s, 8s, and 9s than 1s, 2s, and 3s.
     - Includes: "7891", "123778899", "12789", "8"
     - Excludes: "1", "271", "12399", "831"
 
@@ -219,10 +227,10 @@ Write a regex pattern for each of the following scenarios (or explain why you ca
 <details>
   <summary><b>Click here!</b></summary>
   
-1. `([A-Z][a-z])+`
-2. `(33)*4(44)*`
-3. `\([0-9]{3}\)-[0-9]{3}-[0-9]{4}` (Note, we have to escape the parenthesis with `\`)
-4. `[a-zA-Z0-9]+@umd\.edu` (Note, we have to escape the period with `\`)
+1. `/^([A-Z][a-z])*([A-Z])?$/`
+2. `/(33)*4(44)*/`
+3. `/\([0-9]{3}\)-[0-9]{3}-[0-9]{4}/` (Note, we have to escape the parenthesis with `\`)
+4. `/^[a-zA-Z0-9]+@umd\.edu$/` (Note, we have to escape the period with `\`)
 5. Cannot be represented with regular expressions, since there is no memory of which numbers have been previously used.
   
 </details>
