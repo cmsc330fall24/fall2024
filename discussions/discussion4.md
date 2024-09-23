@@ -169,7 +169,7 @@ There are many patterns regex can describe aside from string literals.
     - Ex. `/a|b|c/` matches "a" or "b" or "c"
 - **Precedence (parentheses)**: `/(a)/` are used to enforce order of evaluation and capture groups.
     - Ex. `/a|bc/` matches "a" or "bc". This is the same as `/a|(bc)/`
-    - Ex. `/(a|b)c/` matches "ab" or "ac"
+    - Ex. `/(a|b)c/` matches "ab" or "bc"
 - **Sets**: `/[abc]/` We use this to accept one character from the given choices.
     - Ex. `/[abc]/` matches "a" or "b" or "c"
 - **Ranges**: `/[a-z]/`, `/[c-k]/`, `/[A-Z]/`, `/[0-9]/` We use these ranges, also known as character classes, to accept characters within a specified range (inclusive).
