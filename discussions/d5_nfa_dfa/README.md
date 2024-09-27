@@ -1,7 +1,8 @@
 # Discussion 5 - Friday, September 27th
 
 ## Reminders
-
+1. **Quiz 2 Today!**
+   1. You will have 25 minutes to complete it
 1. Office Hours Reminders:
    1. Be respectful to TAs
    2. Do not camp out in OH space
