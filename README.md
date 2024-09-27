@@ -13,7 +13,7 @@ This repository will have links to projects and discussions.
   + [Discussion 2](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2.md)
   + [Discussion 3](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/d3_hof_variants/README.md)
   + [Discussion 4](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion4.md)
-  + [Discussion 5](https://github.com/cmsc330fall24/fall2024/blob/main/discu    ssions/d5_nfa_dfa/README.md)
+  + [Discussion 5](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/d5_nfa_dfa/README.md)
 
 ## Discussion Solutions
   + [Discussion 2 Solutions](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2_sol.md)
