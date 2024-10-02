@@ -89,7 +89,7 @@ Some operators work on many different types.
 #### Typing from Expression
 Using steps to breakdown the expression is useful for determining types. <br>
 Follow the steps with this expression: 
-`fun c b a d -> if c || d then b *. b else if c then b else a`
+`fun a b c d -> if c || d then b *. b else if c then b else a`
 * **Find the number of inputs.** 
     - There are 4 inputs
     - `(?->?->?->?->?)`
@@ -112,10 +112,10 @@ Follow the steps with this type:
 * **Try to make expressions for each of the inputs separately**
     - `x` is a function taking a `'a` and returning a `'b` . `y` is type `'a` so the expression `x y` would give the correct type. 
     - `z` is type `'b` so the result of `x y` would be the same type. 
-    - `fun x y z = (x y) ? z`
+    - `fun x y z -> (x y) ? z`
 * **Make the expressions fit the return type**
     - Using bool operator `=` the type will be bool.
-    - `fun x y z = (x y) = z`
+    - `fun x y z -> (x y) = z`
 ### Practice
 * ``fun b d c a -> ((not d) || (d && d)) || a -. b = if c then b else a``
 * ``fun a b c d e -> (e :: d, c a b)``
@@ -209,7 +209,7 @@ Our implemenation of `p` (`I(p)`) is: `count_occ lst target <= List.length lst`
     - `[a-z]` -> all lowercase letters
     - `[A-Z]` -> all uppercase letters
     - `[0-9]` -> every digit from 0 to 9
-        * Observe, `[r1-r2]` is a range specification <details><summary><b>Is [a-Z] valid?</b></summary> No, since Z (uppercase) comes before a (lowercase) in ASCII. [A-z] is valid.
+        * Observe, `[r1-r2]` is a range specification <details><summary><b>What does [A-z] match?</b></summary> All uppercase and lowercase letters (Same as [A-Za-z])
 </details>
 
 - `(cs|ece)` -> capture "cs" **or** "ece"<details><summary><b>What if we did "[cs|ece]"?</b></summary> Will capture "c", "s", "|", or "e"
@@ -229,19 +229,18 @@ Our implemenation of `p` (`I(p)`) is: `count_occ lst target <= List.length lst`
     -  `\w` -> matches to any alphanumeric character including underscore. Equivalent to `[A-Za-z0-9_]`
 
 - Remember to escape special characters
-    -  `\(` -> matches to a left parenthesis
-    -  `\)` -> matches to a right parenthesis
-    -  `\.` -> matches to a period
-    -  `\?` -> matches to a question mark
+    -  Ex. `\(`,  `\)`, `\.`, `\?`, `\+`, `\/`, `\*`, etc.
+
 * Some examples
   * Which of these strings match the following regular expression?
-    `^[A-Z]*[a-z]+\s?.[0-3]+$`
+    `^[A-Z]*[a-z]+\s?.[0-9]+$`
     * Cmsc:330
     * CMSC.330
     * cliff 987
     * anwar:00001a
+    * alan 3
     <details><summary><b>Answer:</b></summary> 
-    Only Cmsc:330
+    Only Cmsc:330 and cliff 987
 </details>
 
   *  Write a regular expression that accepts `id: XXX-XX-XXXX codename: <codename>`, where each `X` represents a digit and `<codename>` is a string **beginning with an uppercase letter** that may have additional uppercase **and/or** lowercase letters after it.
@@ -249,12 +248,14 @@ Our implemenation of `p` (`I(p)`) is: `count_occ lst target <= List.length lst`
      For example, the following strings should be accepted:    
        - id: 669-98-3600 codename: Watch
        - id: 123-45-6789 codename: McGregor
+       - id: 972-35-6200 codename: Minsi
         
      The following strings should be rejected:        
        - id: 123456789 codename: Wrong
        - id: 987-65-4321 codename: nope
+       - id: 271-82-8182 codename: Alan3
        <details><summary><b>Answer:</b></summary> 
-        /^id: [0-9]{3}-[0-9]{2}-[0-9]{4} codename: [A-Z][A-Za-z]*$/</details>
+        ^id: [0-9]{3}-[0-9]{2}-[0-9]{4} codename: [A-Z][A-Za-z]*$</details>
 
   * Write a regex that describes a subset of valid UMD emails. Emails take the form of a user’s directory ID followed by the @ symbol, followed by one of the following domain names: cs.umd.edu, terpmail.umd.edu, or just umd.edu.
     
@@ -264,7 +265,7 @@ Our implemenation of `p` (`I(p)`) is: `count_occ lst target <= List.length lst`
        - A user's directory ID must end with a digit.
 
        <details><summary><b>Answer:</b></summary> 
-        /^([^A-Z][A-Za-z0-9]{0,6})?[0-9]@((cs\.umd\.edu)|(terpmail\.umd\.edu)|(umd\.edu}))$/</details>
+        ^([a-z0-9][A-Za-z0-9]{0,6})?[0-9]@((cs\.|terpmail\.)?umd\.edu)$</details>
 
   * Write a regex that describes a subset of valid mathematical expressions using the basic operations `+ - * /` and positive integers. Our expressions will begin with a positive integer, and may alternate between operations and positive integers before finally ending with a positive integer. Our expressions may also begin and end with matching parenthesis `(` `)`.
 
@@ -281,7 +282,7 @@ Our implemenation of `p` (`I(p)`) is: `count_occ lst target <= List.length lst`
        - 1++32
 
        <details><summary><b>Answer:</b></summary> 
-        /^[0-9]+([\-/+*][0-9]+)*|\([0-9]+([\-/+*][0-9]+)*\)$/</details>
+        ^[0-9]+([\-/+*][0-9]+)*|\([0-9]+([\-/+*][0-9]+)*\)$</details>
         
   * Write a regex that describes a set of numbers in scientific notation. There must be single non-zero digit before the decimal place, and there must be at least 1 digit after the decimal place. Following the digits, we must have "e" and then either a positive or negative integer exponent indicated by a preceeding `+` and `-`, respectively.
 
@@ -298,7 +299,21 @@ Our implemenation of `p` (`I(p)`) is: `count_occ lst target <= List.length lst`
        - 1.0 (no exponent)
 
        <details><summary><b>Answer:</b></summary> 
-        /^[1-9]\.[0-9]+e(\+|-)[0-9]+$/</details>
+        ^[1-9]\.[0-9]+e(\+|-)[0-9]+$</details>
+
+  * Write a regex that matches all integers from 0 to 1 million, inclusive. The integer should not have leading zeros, unless it is just 0.
+
+    For example, the following strings should be accepted:    
+       - 0
+       - 999999
+       - 1000000
+        
+     The following strings should be rejected:        
+       - 1000001
+       - 1023509870
+
+       <details><summary><b>Answer:</b></summary> 
+        ^0|1000000|[1-9][0-9]{0,5}$</details>
 
 * Regular Expressions in OCaml      
   * You need to include the re library. (https://ocaml.org/p/re/1.10.4/doc/Re/index.html)
