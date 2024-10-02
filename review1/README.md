@@ -89,7 +89,7 @@ Some operators work on many different types.
 #### Typing from Expression
 Using steps to breakdown the expression is useful for determining types. <br>
 Follow the steps with this expression: 
-`fun c b a d -> if c || d then b *. b else if c then b else a`
+`fun a b c d -> if c || d then b *. b else if c then b else a`
 * **Find the number of inputs.** 
     - There are 4 inputs
     - `(?->?->?->?->?)`
@@ -112,10 +112,10 @@ Follow the steps with this type:
 * **Try to make expressions for each of the inputs separately**
     - `x` is a function taking a `'a` and returning a `'b` . `y` is type `'a` so the expression `x y` would give the correct type. 
     - `z` is type `'b` so the result of `x y` would be the same type. 
-    - `fun x y z = (x y) ? z`
+    - `fun x y z -> (x y) ? z`
 * **Make the expressions fit the return type**
     - Using bool operator `=` the type will be bool.
-    - `fun x y z = (x y) = z`
+    - `fun x y z -> (x y) = z`
 ### Practice
 * ``fun b d c a -> ((not d) || (d && d)) || a -. b = if c then b else a``
 * ``fun a b c d e -> (e :: d, c a b)``
