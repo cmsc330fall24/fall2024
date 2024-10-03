@@ -62,6 +62,8 @@ Let $F = \\{r \mid \exists s \in r \text{ with } s \in F_n \\}$
    - Compare your DFA with the person next to you
      - Are they the same?
 
+Refer to [Piazza @421](https://piazza.com/class/lzthtu8sxwsmm/post/421) for the work/solutions for NFA -> DFA problems.
+
 ## Resources & Additional Readings
 
 - [Fall 2023 Discussion - NFA and DFA](https://github.com/cmsc330fall23/cmsc330fall23/tree/main/discussions/d3_nfa_dfa)
