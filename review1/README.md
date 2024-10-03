@@ -209,7 +209,7 @@ Our implemenation of `p` (`I(p)`) is: `count_occ lst target <= List.length lst`
     - `[a-z]` -> all lowercase letters
     - `[A-Z]` -> all uppercase letters
     - `[0-9]` -> every digit from 0 to 9
-        * Observe, `[r1-r2]` is a range specification <details><summary><b>What does [A-z] match?</b></summary> All uppercase and lowercase letters (Same as [A-Za-z])
+        * Observe, `[r1-r2]` is a range specification <details><summary><b>What does [A-z] match?</b></summary> All characters with ASCII codes between A and z (including [, \, ], ^, _, and `)
 </details>
 
 - `(cs|ece)` -> capture "cs" **or** "ece"<details><summary><b>What if we did "[cs|ece]"?</b></summary> Will capture "c", "s", "|", or "e"
@@ -240,7 +240,7 @@ Our implemenation of `p` (`I(p)`) is: `count_occ lst target <= List.length lst`
     * anwar:00001a
     * alan 3
     <details><summary><b>Answer:</b></summary> 
-    Only Cmsc:330 and cliff 987
+    Only Cmsc:330, cliff 987, and alan 3
 </details>
 
   *  Write a regular expression that accepts `id: XXX-XX-XXXX codename: <codename>`, where each `X` represents a digit and `<codename>` is a string **beginning with an uppercase letter** that may have additional uppercase **and/or** lowercase letters after it.
