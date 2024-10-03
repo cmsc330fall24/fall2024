@@ -132,6 +132,8 @@ In this course, we will be programming in OCaml and Rust.  Below is a summary of
 
 There is no required text editor/IDE for this course, however, instructors are familiar with [VS Code](https://code.visualstudio.com/download) so we recommend it.
 
+If you want to open VS Code from a terminal, it needs to be added to your path. Open VS Code, open the command palette, and type in `Shell Command`, select the option to install the `code` command in PATH. Next time you open a shell, you can use `code <folder / file>` to open that folder/file in VS Code.
+
 #### Extensions
 
 Here is a short list of some useful extensions; feel free to explore the marketplace for more.
