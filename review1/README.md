@@ -1,6 +1,6 @@
 # Exam 1 Review Session
 ## PL Concepts and OCaml Basics (15 mins)
-Notes: [PLConceptsOCamlBasicsReview1.pdf](https://github.com/user-attachments/files/17236379/PLConceptsOCamlBasicsReview1.pdf)
+[Zoya's Notes](https://github.com/user-attachments/files/17236379/PLConceptsOCamlBasicsReview1.pdf)
 * Syntax: what a program looks like
 * Semantics: what a program means (what it computes)
   * Same syntax could have different meanings for different languages
@@ -408,3 +408,4 @@ When doing this on paper, you can consider keeping track of all this info throug
 
 3) 
 <img width="687" src="./imgs/nfadfa.png">
+[Solutions](https://github.com/cmsc330fall24/fall2024/blob/main/review1/nfa-dfa%20sol.pdf)
