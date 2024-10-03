@@ -1,0 +1,215 @@
+S -> aSb|e
+
+aabb -> S -> aSb
+          -> aaSbb
+          -> aabb
+
+S -> aSb | ab
+
+S -> aSb
+S -> ab
+   S
+  /|\
+ / | \  
+|  S  |
+| /|\ |
+a aSb b 
+   |
+   e
+
+
+E -> A | E + E | E - E
+A -> a|b|c
+
+a - b - c
+
+E -> E - E
+  -> a - E
+  -> a - E - E
+  -> a - b - E
+  -> a - b - c
+this particular derivation is called leftmost derivation
+a leftmost derivation is a derivation where you expand the leftmost
+non-terminal fist every time
+            E
+            |
+          E - E
+          |   |
+          a   |
+            E - E
+            |   |
+            b   c
+
+E -> E - E
+  -> E - c
+  -> E - E - c
+  -> E - b - E
+  -> a - b - c
+this particular derivation is called rightmost derivation
+a rightmost derivation is where you expand the rightmost 
+non-terminal fist every time
+
+nonspecific derivations: you do you
+
+E -> E - E
+  -> E - c
+  -> E - E - c
+  -> a - E - c
+  -> a - b - c
+valid leftmost derivation
+E -> E - E
+  -> a - E
+  -> a - E - E
+  -> a - b - E
+  -> a - b - c
+            E
+            |
+          E - E
+          |   |
+          a   |
+            E - E
+            |   |
+            b   c
+
+  there is another valid leftmost derivation
+E -> E - E
+  -> E - E - E
+  -> a - E - E
+  -> a - b - E
+  -> a - b - c
+
+    E
+    |
+  E - E
+  |   |
+E - E |
+|   | |
+a   b c
+
+why we care: when we have two different left most derivations for a
+            single string, we say the string/grammar is ambiguous
+            OR
+            when we have two diffferent right most derivations for a
+            single sting, we say the string/grammar is ambiguous
+
+
+
+
+i saw a dog with a telescope
+I saw a dog (with a telescope): using a telescope, I saw a dog
+i saw a (dog with a telescope): i saw a dog with a telescope in its
+                                mouth
+
+Parser: a tool to decide if a string is grammatically correct
+        (parsers build trees) no tree -> the string is not gram correct
+
+        In this class, we will discuss and use an LL(k) parser
+        there are many types of parers
+        left to right vs right to left
+        top down vs bottom up
+        lookahead or backtracing parsers
+        + others
+
+        LL(k) is a top down (recursive decent parser or rdp)
+              left to right
+              lookahead (of k) parser
+
+        
+E→ A|E+A|E−A|E∗A|E/A
+A→ 0|1|…|9|(E)
+
+1 - 2 - 3
+
+        E
+     E   - A
+   E - A
+   A
+   1 - 2 - 3
+
+E→ A|E+A|E−A|E∗A|E/A
+A→ 0|1|…|9|(E)
+      
+2 - 4 * 5
+
+E -> E   * A
+   E - A 
+   A
+
+   2   4   5
+
+
+E→E+A|E−A|A
+A→A∗B|A/B|B
+B→0|1|…|9|(E)
+
+2 - 4 * 5
+E -> A
+   A * B 
+  (E) * B
+  2 - 4
+
+
+S -> if S then S else S
+S -> if S then S
+S -> V
+V -> true | false
+
+if true{ 
+  if false{ 
+    true
+  }
+}
+else 
+ true
+
+match x with 
+  [] -> []
+  |x::xs -> match x with 
+            [] -> []
+            |y::ys -> ys
+
+
+
+let x = 5 in x + 7
+
+S -> let V = S in S| S + S | V | N
+V -> x | y
+N -> 5 | 7
+
+              S
+              |
+      let V = S in S
+          x   |    |
+              N   S+S
+              |   V N
+              5   x 7
+x =5,x + 7
+
+  Let
+v,e1,e2
+
+let v = e1 in e2
+
+
+(src,cost,dest)
+(src,cost,actions,dest)
+(src,cost1,cost2,action1,action2,dest)
+
+(s0,i see an "a", the top of stack is "true", pop, push "b", s1)
+
+fsm
+alphabet
+states
+transitions
+finals
+start
+
+pda
+(input) alphabet
+(stack) alphabet
+states
+transtition
+finals
+start
+stack
+
