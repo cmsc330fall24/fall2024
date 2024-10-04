@@ -23,6 +23,8 @@ Convert the following NFA to its equivalent DFA.
 
 ![image](https://github.com/user-attachments/assets/744bdabf-9e2f-48b8-b7bc-b75ec4b04a40)
 
+[Answers are here!](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/d6_nfa_review_cfg/CMSC330%20-%20Discussion%206%20NFA%20Solutions.pdf)
+
 ### Resources and Extra Practice
 - [NFA to DFA Practice Problems](https://bakalian.cs.umd.edu/330/practice/nfa2dfa)
 - [Fall 2024 Discussion 5](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/d5_nfa_dfa/README.md)
