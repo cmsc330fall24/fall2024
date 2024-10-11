@@ -1,4 +1,4 @@
-# Discussion 7 - Friday, October 11th
+# Discussion 7 - Friday, October 11th ඞ
 
 ## Reminders
 
