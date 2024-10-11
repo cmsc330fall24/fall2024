@@ -4,6 +4,10 @@
 
 1. Project 3 due **Monday, October 14 @ 11:59 PM**
 
+
+## CFG's
+We will start out by covering CFG's from last weeks discussion.
+
 ## Coding Exercise
 
 - To go from source code to a running program, there are 3 steps (at least for our purposes):
