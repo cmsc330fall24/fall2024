@@ -51,6 +51,8 @@ Using the rules given above, show that the following statements are **well typed
 1. `eq0 if true then 0 else 1`
 2. `let x = 5 in eq0 x and false`
 
+[Solutions!!!ඞ](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/d8_opsem/d8_solutions.pdf)
+
 ## Additional Readings & Resources
 
 - [Professor Mamat's Operational Semantics Slides](https://bakalian.cs.umd.edu/assets/slides/17-semantics.pdf)
