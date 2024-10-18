@@ -263,7 +263,7 @@ You can generate random trees to test your `flatten` and `unflatten` functions u
 let t = DebugUtils.gen_tree () in 
  assert (unflatten (flatten t) = t)
 ```
-In Utop, you can generate random tress by running
+In Utop, you can generate random trees by running
 ```ocaml
 dune utop src
 DebugUtils.gen_tree ();;
