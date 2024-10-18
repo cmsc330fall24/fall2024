@@ -27,7 +27,7 @@ Def ("b", Let ("x", false, (Bool true), ID "x"))
 
 In the second part of this project, you will implement an interpreter to execute the ASTs produced in part (A).
 
-In particular, you will implement two functions, `eval_expr` and `eval_mutop`. Each of these takes an `environment` (defined in [types.ml](./src/types.ml)) as a parameter, which acts as a map from variables to expressions. The `eval_expr` function evaluates an expression in the given environment, returning a `expr`, while `eval_mutop` takes a `mutop` -- a top-level directive -- and returns a possibly updated environment and any additional result.
+In particular, you will implement two functions, `eval_expr` and `eval_mutop`. Each of these takes an `environment` (defined in `types.ml`) as a parameter, which acts as a map from variables to expressions. The `eval_expr` function evaluates an expression in the given environment, returning a `expr`, while `eval_mutop` takes a `mutop` -- a top-level directive -- and returns a possibly updated environment and any additional result.
 
 You will need to use Imperative OCaml (notably references) in this part of the project. This use is small, but important. More details below.
 
@@ -81,7 +81,7 @@ Your parser will take as input a list of tokens; this list is produced by the *l
 
 Lexing is readily implemented by use of regular expressions, as demonstrated during lecture. You are permitted to use library functions from both the [`Re` module](https://ocaml.org/p/re/latest/doc/Re/index.html), and the [`Str`](https://v2.ocaml.org/api/Str.html) module. Note that you aren't strictly required to use regex functions, but you may find it VERY helpful.
 
-Your lexer must be written in [lexer.ml](./src/lexer.ml). You will need to implement the following function: 
+Your lexer must be written in `lexer.ml`. You will need to implement the following function: 
 
 #### `tokenize`
 
@@ -101,7 +101,7 @@ Your lexer must be written in [lexer.ml](./src/lexer.ml). You will need to imple
     [Tok_Let; Tok_Rec; Tok_ID "ex"; Tok_Equal; Tok_Fun; Tok_ID "x"; Tok_Arrow; Tok_ID "x"; Tok_Or; Tok_Bool true; Tok_DoubleSemi]
   ```
 
-The `token` type is defined in [types.ml](./src/types.ml).
+The `token` type is defined in `types.ml`.
 
 Notes:
 - The lexer input is case sensitive.
@@ -177,7 +177,7 @@ Notes:
 
 ## Part A2: Parsing MicroCaml Expressions
 
-In this part, you will implement `parse_expr`, which takes a stream of tokens and outputs as AST for the input expression of type `expr`. Put all of your parser code in [parser.ml](./src/parser.ml) in accordance with the signature found in [parser.mli](./src/parser.mli). 
+In this part, you will implement `parse_expr`, which takes a stream of tokens and outputs as AST for the input expression of type `expr`. Put all of your parser code in `parser.ml` in accordance with the signature found in `parser.mli`. 
 
 We present a quick overview of `parse_expr` first, then the definition of AST types it should return, and finally the grammar it should parse.
 
@@ -388,7 +388,7 @@ Let ("f", false,
 
 ## Part A3: Parsing `mutop` directives
 
-In this part, you will implement `parse_mutop` (putting your code in [parser.ml](./src/parser.ml)) in accordance with the signature found in [parser.mli](./src/parser.mli). This function takes a token list produced by lexing a string that is a mutop (top-level) MicroCaml directive, and returns an AST of OCaml type `mutop`. Your implementation of `parse_mutop` will reuse your `parse_expr` implementation, and will not be much extra work.
+In this part, you will implement `parse_mutop` (putting your code in `parser.ml` in accordance with the signature found in `parser.mli`. This function takes a token list produced by lexing a string that is a mutop (top-level) MicroCaml directive, and returns an AST of OCaml type `mutop`. Your implementation of `parse_mutop` will reuse your `parse_expr` implementation, and will not be much extra work.
 
 We present a quick overview of the function first, then the definition of AST types it should return, and finally the grammar it should parse.
 
@@ -728,7 +728,7 @@ eval_expr [] (Select (Lab "z", (Record [(Lab "x", Int 10); (Lab "y", Int 20)])))
 - **Type:** `environment -> mutop -> environment * (expr option)`
 - **Description:** This function evaluates the given `mutop` directive in the given `environment`, returning an updated environment with an optional `expr` as the result.
 
-There are three kinds of `mutop` directive (as defined in [types.ml](./src/types.ml)):
+There are three kinds of `mutop` directive (as defined in `types.ml`):
 
   ```ocaml
   type mutop =
