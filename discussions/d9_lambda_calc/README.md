@@ -27,11 +27,11 @@ a lambda function.
 ### Explicit Rules to remove ambiguity
 - Expressions $e$ are left associative
 ```
-a b c means (a b) c
+a b c means ((a b) c)
 ```
 - The scope of a function goes until the **end of the entire expression** or until a (unmatched) parenthesis is reached
 ```
-λx .λy. a b means λx. (λy. (a b))
+λx. λy. a b means (λx. (λy. (a b)))
 ```
 
 ### Alpha Conversion
