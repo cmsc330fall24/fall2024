@@ -25,7 +25,7 @@ a lambda function.
 ```
 
 ### Explicit Rules to remove ambiguity
-- Expressions $e$ are left associative
+- Expressions are left associative
 ```
 a b c means ((a b) c)
 ```
