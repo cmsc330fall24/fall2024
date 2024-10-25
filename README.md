@@ -21,5 +21,9 @@ This repository will have links to projects and discussions.
   + [Discussion 8](https://github.com/cmsc330fall24/fall2024/tree/main/discussions/d8_opsem)
   + [Discussion 9](https://github.com/cmsc330fall24/fall2024/tree/main/discussions/d9_lambda_calc)
 
+## Discussion Solutions
+  + [Discussion 2 Solutions](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2_sol.md)
+  + [Discussion 3 Solutions](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/d3_hof_variants/src/exercises_sol.ml)
+
 ## Review Sessions
   + [Exam 1 Review](https://github.com/cmsc330fall24/fall2024/tree/main/review1)
