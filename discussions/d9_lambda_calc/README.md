@@ -10,7 +10,7 @@
 *Refer to [Cliff's Lambda Calculus Notes](https://bakalian.cs.umd.edu/assets/notes/lambdacalc.pdf) for a complete resource.*
 
 ### Bound vs. Free Variables
-- A bound variable is one who’s value is dependent on a parameter of
+- A bound variable is one whose value is dependent on a parameter of
 a lambda function.
 - A free variable is a variable that is not a bound variable: its value is **independent** of lambda function parameters.
 ```
