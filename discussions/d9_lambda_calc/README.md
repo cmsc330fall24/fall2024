@@ -13,7 +13,7 @@
 - A bound variable is one who’s value is dependent on a parameter of
 a lambda function.
 - A free variable is a variable that is not a bound variable: its value is **independent** of lambda function parameters.
-```scheme
+```
 (λx. x a ) b
      ↑ x is a bound variable
      
@@ -36,14 +36,14 @@ a b c means (a b) c
 
 ### Alpha Conversion
 - An alpha-conversion ($\alpha$-conversion) is the process of renaming all the variables that are bound together along with the bounded parameter to a different name to increase readability.
-```scheme
+```
 (λx. (λx. (λy. x y)) x) x → 
 (λa. (λb. (λy. b y)) a) x            Alpha Conversion
 ```
 
 ### Beta Reduction
 - The process of of applying a function is called reducing. We call a function call a beta reduction ($\beta$-reduction).
-```scheme
+```
 (λx. λy. y x) a b →
 ((λx. λy. y x) a) b →          Left associativity
 (λy. y a) b →                  Beta reduce the x function
@@ -54,7 +54,7 @@ b a                            Beta reduce the y function
 ### Eager vs. Lazy Evaluation
 - Eager Evaluation (Call by Value): Before doing a beta reduction, we make sure the argument cannot, itself, be further evaluated:
 
-```scheme
+```
 (λz. z) ((λy. y) x) →          
 (λz. z) x →                    We evaluate the argument first!
 x
@@ -62,7 +62,7 @@ x
 
 - Lazy Evaluation (Call by Name): We can specifically choose to perform beta-reduction _before_ we evaluate the argument:
 
-```scheme
+```
 (λz. z) ((λy. y) x) →
 (λy. y) x →                    We apply the function (beta-reduce) first!
 x
@@ -119,6 +119,7 @@ Convert the following sentences to their equivalent lambda calc encodings:
 
 Next, reduce the lambda calc expressions to their simplest form. Verify that the resulting expression is equivalent to the english sentence when evaluated.
 
+[Solutions :D ඞ](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/d9_lambda_calc/SOLUTIONS.md)
 
 ## Additional Readings & Resources
 - [Cliff's Lambda Calculus Notes](https://bakalian.cs.umd.edu/assets/notes/lambdacalc.pdf)
