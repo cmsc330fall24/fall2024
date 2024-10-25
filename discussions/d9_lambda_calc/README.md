@@ -128,5 +128,3 @@ Next, reduce the lambda calc expressions to their simplest form. Verify that the
 - [Types and Programming Languages (Pierce 2002)](https://www.cs.sjtu.edu.cn/~kzhu/cs383/Pierce_Types_Programming_Languages.pdf)
   - See Chapter 5: _The Untyped Lambda-Calculus_
 - [nmittu.github.io - Beta Reduction Practice](https://nmittu.github.io/330-problem-generator/beta_reduction.html)
-
-ඞ
