@@ -33,7 +33,7 @@ You will need to use Imperative OCaml (notably references) in this part of the p
 
 ### Ground Rules and Extra Info
 
-In addition to all of the built in OCaml features and feature we've taught about in class, you may also use library functions found in the Stdlib module, Str module, List module, and the Re module. 
+In addition to all of the built in OCaml features and feature we've taught about in class, you may also use library functions found in the Stdlib module, Str module, String module, List module, and the Re module. 
 
 ### Testing & Submitting
 
