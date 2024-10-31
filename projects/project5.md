@@ -1,7 +1,7 @@
 # Project 5: MicroCaml Optimizer and Type Checker
 
 > [!NOTE]
-> **Due**: November 14th, 2024, 11:59PM (Late: November 15th, 2024, 11:59PM) \
+> **Due**: Wednesday, November 13th, 2024, 11:59PM (Late: Thursday, November 14th, 2024, 11:59PM) \
 > **Points**: 50 public, 50 semipublic
 
 > [!IMPORTANT]
