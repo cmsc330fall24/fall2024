@@ -29,3 +29,4 @@ This repository will have links to projects and discussions.
 
 ## Review Sessions
   + [Exam 1 Review](https://github.com/cmsc330fall24/fall2024/tree/main/review1)
+  + [Exam 2 Review](https://github.com/cmsc330fall24/fall2024/tree/main/Exam2-Review)
