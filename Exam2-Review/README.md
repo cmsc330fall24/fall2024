@@ -190,7 +190,7 @@ G → true | false
 
 2.c: succeeds
 
-2.d: eval
+2.d: parse
 
 2.e: lex
 
