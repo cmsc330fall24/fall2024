@@ -216,7 +216,7 @@ G → true | false
 2.a: parse
 2.b: parse
 2.c: succeeds
-2.d: eval
+2.d: parse
 2.e: lex
 
 3: It could be gross!
