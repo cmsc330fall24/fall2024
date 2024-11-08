@@ -348,6 +348,8 @@ Some expressions that might be useful:
 - `(n as f64).sqrt() as u32` will find the square root of n and floor it
 - `%` is the modulus operator
 
+Challenge: Can you do it faster than $O(n^{\frac{3}{2}}$? :)
+
 [Click here for the solution! (I would highly encourage you to try this problem first!! :D)](https://github.com/cmsc330fall24/fall2024/tree/main/discussions/d11_rust_basics/solution.rs)
 
 ### Additional Resources
