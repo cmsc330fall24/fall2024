@@ -49,7 +49,7 @@ The main function is where every rust program starts.
 Similar to most languages you've seen before, functions in Rust are denoted using parentheses for their input parameters and curly braces wrapping the body.
 
 ```rust
-fn add1(x: i32, y: i32) {
+fn add1(x: i32, y: i32) -> i32 {
     x + y // Note lack of semi-colon. That means this expression is returned! Equivalent to `return x + y;`
 }
 // to call this:
@@ -269,7 +269,7 @@ fn append_world(s: &mut String) {
         println!("{}", y);
     } // scope of y ends, y lifetime ends
     
-    let z = 5
+    let z = 5;
     println!("Hello World!"); // z lifetime ends
 } // scope of x, z ends
 ```
@@ -347,8 +347,6 @@ Some expressions that might be useful:
 - `fn is_prime(n: u32) -> bool` should be the function header
 - `(n as f64).sqrt() as u32` will find the square root of n and floor it
 - `%` is the modulus operator
-
-Challenge: Can you do it faster than $O(n^{\frac{3}{2}})$?
 
 [Click here for the solution! (I would highly encourage you to try this problem first!! :D)](https://github.com/cmsc330fall24/fall2024/tree/main/discussions/d11_rust_basics/solution.rs)
 
