@@ -9,6 +9,7 @@ This repository will have links to projects and discussions.
   + [Project 3](https://classroom.github.com/a/Y66PeaCQ) ([README](https://github.com/cmsc330fall24/fall2024/blob/main/projects/project3.md))
   + [Project 4](https://classroom.github.com/a/PxFtXU-D) ([README](https://github.com/cmsc330fall24/fall2024/blob/main/projects/project4.md))
   + [Project 5](https://classroom.github.com/a/vNwO_BJg) ([README](https://github.com/cmsc330fall24/fall2024/blob/main/projects/project5.md))
+  + [Project 6](https://classroom.github.com/a/3EOj9D-y) ([README](https://github.com/cmsc330fall24/fall2024/blob/main/projects/project6.md))
 
 
 ## Discussions
