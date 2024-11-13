@@ -35,13 +35,9 @@ You should test your project *locally* in the following ways:
 
 Relying on Gradescope for testing is poor practice and not recommended. Additionally, staff cannot tell you what the semipublic and secret tests are.  
 
-To run public tests locally, first build your code with 
+Run all tests locally using
 
 `dune build`
-
-Then run all tests in your project using 
-
-`dune runtest -f`
 
 If you get stuck in an infinite loop, exit the tests using `Ctrl-C`. Do *not* use `Ctrl-Z`, as this will only suspend the process, not end it. 
 
