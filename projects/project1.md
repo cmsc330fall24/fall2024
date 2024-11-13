@@ -37,7 +37,7 @@ Relying on Gradescope for testing is poor practice and not recommended. Addition
 
 Run all tests locally using
 
-`dune build`
+`dune runtest -f`
 
 If you get stuck in an infinite loop, exit the tests using `Ctrl-C`. Do *not* use `Ctrl-Z`, as this will only suspend the process, not end it. 
 
