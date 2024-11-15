@@ -10,13 +10,24 @@
 
 Ownership is one way that Rust is able to clear data without use of a garbage collector. It describes how a variable "owns" a piece of data on the heap, and once the owner goes out of scope, the data is dropped. 
 
-Ownership can be transferred.
+Ownership can be transferred (except primitives):
 
+- Ownership not transferred:
+```rust
+let x = 5;
+let y = x;
+
+println!("{} = 5!", y); //ok
+println!("{} = 5!", x); //ok
+```
+
+- Ownership transferred:
 ```rust
 let x = String::from("hello"); // x owns hello
 
 let y = x; // y takes ownership, x is now invalid.
 ```
+
 
 But this is not always what we want! For example: 
 
