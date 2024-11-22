@@ -50,7 +50,7 @@ for i in 0..nums.len() {
 If we want to mutate the data while we iterate, we use iter_mut:
 
 ```rust
-let nums = vec![1,2,3,4,5,6,7,8,9,10];
+let mut nums = vec![1,2,3,4,5,6,7,8,9,10];
 for element in nums.iter_mut() {
     *element += 1;
 }
