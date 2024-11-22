@@ -65,7 +65,7 @@ https://play.rust-lang.org/?version=stable&mode=debug&edition=2021
 - Ownership and borrowing rules still apply
 
 ```rust
-let lambda = |x| x;
+let lambda = |x| x + 3;
 println!("{}",lambda(5));
 ```
 
