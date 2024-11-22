@@ -1,4 +1,4 @@
-#Discussion 13 - Rust Iterators, Closures, Smart Pointers
+# Discussion 13 - Rust Iterators, Closures, Smart Pointers
 
 ## Reminders
 - Project 7 is due December 9th (11:59 PM)
