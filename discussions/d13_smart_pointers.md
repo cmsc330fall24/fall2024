@@ -1,5 +1,7 @@
 # Discussion 13 - Rust Iterators, Closures, Smart Pointers
 
+## Quiz Today! - 25 minutes
+
 ## Reminders
 - Project 7 is due December 9th (11:59 PM)
 - Final Exam is December 12th, 6:30 - 8:30 PM, rooms TBA
@@ -82,15 +84,7 @@ Quick review of the 3 smart pointers you've learned about so far:
 - Box<T> allows immutable or mutable borrows checked at compile time; Rc<T> allows only immutable borrows checked at compile time; RefCell<T> allows immutable or mutable borrows checked at runtime.
 - Because RefCell<T> allows mutable borrows checked at runtime, you can mutate the value inside the RefCell<T> even when the RefCell<T> is immutable.
 
-Take this new definition of a LinkedList: 
-```rust
-enum List {
-    Cons(Rc<RefCell<i32>>, Rc<List>),
-    Nil,
-}
-```
-
-Compared to what we saw last week:
+Consider the following 2 definitions of a LinkedList in Rust: 
 ```rust
 pub enum List {
     Cons(i32, Box<List>),
@@ -98,9 +92,16 @@ pub enum List {
 }
 ```
 
-What does this new definition allow us to do that our old one didn't, know that we know about Box, Rc, and RefCells
+```rust
+enum List {
+    Cons(Rc<RefCell<i32>>, Rc<List>),
+    Nil,
+}
+```
 
-How we did it before (returning a new list):
+What does this second definition allow us to do that the first doesn't?
+
+For the Box definition, insert and reverse would have to return a new list:
 
 ```rust
     pub fn insert(self, n: i32) -> List {
@@ -118,5 +119,5 @@ How we did it before (returning a new list):
     }
 ```
 
-Challenge: try to reverse this linkedlist definition in place
+Challenge: try to reverse the RefCell, Rc linkedlist definition in place
 - helpful resource for above: https://rust-unofficial.github.io/too-many-lists/fourth-final.html
