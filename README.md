@@ -26,6 +26,7 @@ This repository will have links to projects and discussions.
   + [Discussion 10](https://github.com/cmsc330fall24/fall2024/tree/main/discussions/d10_garbage_collection)
   + [Discussion 11](https://github.com/cmsc330fall24/fall2024/tree/main/discussions/d11_rust_basics)
   + [Discussion 12](https://github.com/cmsc330fall24/fall2024/tree/main/discussions/d12_rust_ownership_structs)
+  + [Discussion 13](https://github.com/cmsc330fall24/fall2024/tree/main/disc    ussions/d13_smart_pointers.md)
 
 ## Discussion Solutions
   + [Discussion 2 Solutions](https://github.com/cmsc330fall24/fall2024/blob/main/discussions/discussion2_sol.md)
