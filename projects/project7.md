@@ -68,35 +68,35 @@ Diagram of each step:
 
 - Before any step
 
-![alt text](rust_imgs/image-3.png)
+![alt text](imgs/image-3.png)
 
 - Ref Stack 2
 
-![alt text](rust_imgs/image-4.png)
+![alt text](imgs/image-4.png)
 
 - Ref Heap 2 0 3 4
 
-![alt text](rust_imgs/image-5.png)
+![alt text](imgs/image-5.png)
 
 - Ref Stack 0
 
-![alt text](rust_imgs/image-6.png)
+![alt text](imgs/image-6.png)
 
 - Ref Stack 8 9
 
-![alt text](rust_imgs/image-9.png)
+![alt text](imgs/image-9.png)
 
 - Ref Heap 0 5 2
 
-![alt text](rust_imgs/image-7.png)
+![alt text](imgs/image-7.png)
 
 - Pop
 
-![alt text](rust_imgs/image-8.png)
+![alt text](imgs/image-8.png)
 
 - Pop
 
-![alt text](rust_imgs/image-10.png)
+![alt text](imgs/image-10.png)
 
 
 
@@ -120,15 +120,15 @@ Pop
 
 - Ref Stack 0 1
 
-![alt text](rust_imgs/i-4.png)
+![alt text](imgs/i-4.png)
 
 - Ref Heap 1 3 2 5
 
-![alt text](rust_imgs/i-5.png)
+![alt text](imgs/i-5.png)
 
 - Pop (including each free step)
 
-![alt text](rust_imgs/i-6.png)
+![alt text](imgs/i-6.png)
 
 This will return: 
 
@@ -171,12 +171,12 @@ Diagram:
 
 - Before Mark and Sweep
 
-![alt text](rust_imgs/i-10.png)
+![alt text](imgs/i-10.png)
 
 
 - After Mark and Sweep
 
-![alt text](rust_imgs/i-1.png)
+![alt text](imgs/i-1.png)
 
 
 
@@ -186,7 +186,7 @@ let input_heap: Vec<Option<(String, Vec<u32>)>> = vec![Some(("A".to_string(), ve
 let expected = vec![None, None,  Some(("C".to_string(), vec![3])), Some(("D".to_string(), vec![2]))];
 
 let mut mem = Memory {
-    stack : vec![vec! [0]],
+    stack : vec![vec! [3]],
     heap: input_heap,
 };
 
@@ -198,11 +198,11 @@ Diagrams:
 
 - Before Mark and Sweep: 
 
-![alt text](rust_imgs/i-2.png)
+![alt text](imgs/i-3.png)
 
 - After Mark and Sweep: 
 
-![alt text](rust_imgs/i-3.png)
+![alt text](imgs/i-2.png)
 
 
 ## Stop and Copy
@@ -250,11 +250,11 @@ Diagram of above example:
 
 - Initially:
 
-![alt text](rust_imgs/image-00.png)
+![alt text](imgs/image-00.png)
 
 - After Stop and Copy: 
 
-![alt text](rust_imgs/i-9.png)
+![alt text](imgs/i-9.png)
 
 ```rust
     let mut mem = Memory {
@@ -278,7 +278,7 @@ Diagram of above example:
 
 - Initially then after stop and copy
 
-![alt text](rust_imgs/i-8.png)
+![alt text](imgs/i-8.png)
 
 
 
@@ -298,7 +298,7 @@ Memory {
 }
 ```
 
-Represents a memory diagram that appears as follows: ![alt text](rust_imgs/image-1.png)
+Represents a memory diagram that appears as follows: ![alt text](imgs/image-1.png)
 
 
 For reference counting, we modify this slightly, removing the names of memory addresses and replacing that with a space for their reference count. For example:
@@ -307,11 +307,11 @@ For reference counting, we modify this slightly, removing the names of memory ad
 pub struct RefCountMem {
     pub stack: vec![vec![3], vec![2,0], vec![]],
     pub heap: Vec<(Option<Vec<u32>>, u32)> 
-    vec![Some(vec![3,2], 1), Some(vec![], 0), Some(vec![], 2), Some(vec![4], 2), Some(vec![], 1)],
+    vec![(Some(vec![3,2]), 1), (Some(vec![]), 0), (Some(vec![]), 2), (Some(vec![4]), 2), (Some(vec![]), 1)],
 }
 ```
 
-Represents this memory diagram: ![alt text](rust_imgs/image-2.png)
+Represents this memory diagram: ![alt text](imgs/image-2.png)
 
 (We included the indicies here to help understanding, but RefCountMem heap entries are unnamed).
 
@@ -332,4 +332,4 @@ Memory {
 
 Diagram of above: 
 
-![alt text](rust_imgs/i-7.png)
+![alt text](imgs/i-7.png)
