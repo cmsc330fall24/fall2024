@@ -68,35 +68,35 @@ Diagram of each step:
 
 - Before any step
 
-![alt text](imgs/image-3.png)
+![alt text](rust_imgs/image-3.png)
 
 - Ref Stack 2
 
-![alt text](imgs/image-4.png)
+![alt text](rust_imgs/image-4.png)
 
 - Ref Heap 2 0 3 4
 
-![alt text](imgs/image-5.png)
+![alt text](rust_imgs/image-5.png)
 
 - Ref Stack 0
 
-![alt text](imgs/image-6.png)
+![alt text](rust_imgs/image-6.png)
 
 - Ref Stack 8 9
 
-![alt text](imgs/image-9.png)
+![alt text](rust_imgs/image-9.png)
 
 - Ref Heap 0 5 2
 
-![alt text](imgs/image-7.png)
+![alt text](rust_imgs/image-7.png)
 
 - Pop
 
-![alt text](imgs/image-8.png)
+![alt text](rust_imgs/image-8.png)
 
 - Pop
 
-![alt text](imgs/image-10.png)
+![alt text](rust_imgs/image-10.png)
 
 
 
@@ -120,15 +120,15 @@ Pop
 
 - Ref Stack 0 1
 
-![alt text](imgs/i-4.png)
+![alt text](rust_imgs/i-4.png)
 
 - Ref Heap 1 3 2 5
 
-![alt text](imgs/i-5.png)
+![alt text](rust_imgs/i-5.png)
 
 - Pop (including each free step)
 
-![alt text](imgs/i-6.png)
+![alt text](rust_imgs/i-6.png)
 
 This will return: 
 
@@ -171,12 +171,12 @@ Diagram:
 
 - Before Mark and Sweep
 
-![alt text](imgs/i-10.png)
+![alt text](rust_imgs/i-10.png)
 
 
 - After Mark and Sweep
 
-![alt text](imgs/i-1.png)
+![alt text](rust_imgs/i-1.png)
 
 
 
@@ -198,11 +198,11 @@ Diagrams:
 
 - Before Mark and Sweep: 
 
-![alt text](imgs/i-3.png)
+![alt text](rust_imgs/i-3.png)
 
 - After Mark and Sweep: 
 
-![alt text](imgs/i-2.png)
+![alt text](rust_imgs/i-2.png)
 
 
 ## Stop and Copy
@@ -250,11 +250,11 @@ Diagram of above example:
 
 - Initially:
 
-![alt text](imgs/image-00.png)
+![alt text](rust_imgs/image-00.png)
 
 - After Stop and Copy: 
 
-![alt text](imgs/i-9.png)
+![alt text](rust_imgs/i-9.png)
 
 ```rust
     let mut mem = Memory {
@@ -278,7 +278,7 @@ Diagram of above example:
 
 - Initially then after stop and copy
 
-![alt text](imgs/i-8.png)
+![alt text](rust_imgs/i-8.png)
 
 
 
@@ -298,7 +298,7 @@ Memory {
 }
 ```
 
-Represents a memory diagram that appears as follows: ![alt text](imgs/image-1.png)
+Represents a memory diagram that appears as follows: ![alt text](rust_imgs/image-1.png)
 
 
 For reference counting, we modify this slightly, removing the names of memory addresses and replacing that with a space for their reference count. For example:
@@ -311,7 +311,7 @@ pub struct RefCountMem {
 }
 ```
 
-Represents this memory diagram: ![alt text](imgs/image-2.png)
+Represents this memory diagram: ![alt text](rust_imgs/image-2.png)
 
 (We included the indicies here to help understanding, but RefCountMem heap entries are unnamed).
 
@@ -332,4 +332,4 @@ Memory {
 
 Diagram of above: 
 
-![alt text](imgs/i-7.png)
+![alt text](rust_imgs/i-7.png)
