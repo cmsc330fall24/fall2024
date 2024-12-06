@@ -318,7 +318,7 @@ fn main(){
     6. FAILS to compile - Arguments are not references
     7. Compiles
     8. Compiles
-    9. FAILS to compile - Two mut borrows to the name, need to use .clone()
+    9. FAILS to compile - one mut and one immut borrow to the name, need to use .clone()
 </details>
 
 #### 9. OCaml/Rust Coding
