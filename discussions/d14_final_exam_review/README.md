@@ -349,16 +349,16 @@ let rec sum_diag matrix = ...
         fold_left helper_1 (0, 0) matrix in
       sum
 
-      Solution 2:
-      let rec helper lst target curr = match lst with 
-        |[] -> failwith "element not found"
-        |x::xs -> if curr = target then x else (helper xs target (curr + 1));;
+    Solution 2:
+    let rec helper lst target curr = match lst with 
+      |[] -> failwith "element not found"
+      |x::xs -> if curr = target then x else (helper xs target (curr + 1));;
         
-      (* our accumulator is a tuple with the sum as the first value, and the index as the second value *)
-      (* we use a helper function that gets us the value in the list at the index 'target' *)
-      (* small note, fst gets you the first value in a tuple and snd gets you the second value *) 
-      let rec sum_diag matrix = fst (List.fold_left (fun acc x -> let value = (helper x (snd acc) 0)
-                                in (fst acc + value, snd acc + 1)) (0,0) matrix)
+    (* our accumulator is a tuple with the sum as the first value, and the index as the second value *)
+    (* we use a helper function that gets us the value in the list at the index 'target' *)
+    (* small note, fst gets you the first value in a tuple and snd gets you the second value *) 
+    let rec sum_diag matrix = fst (List.fold_left (fun acc x -> let value = (helper x (snd acc) 0)
+                              in (fst acc + value, snd acc + 1)) (0,0) matrix)
 </details>
 
 ##### Rust: Given a Vec<Vec<u32>> matrix, return the sum of the diagonal elements of the matrix. Assume the matrix we give you is a square matrix $(m \times m)$.
