@@ -122,7 +122,7 @@ in count (mirror tree) = count tree
 
 ##### From Spring 2024 Final Exam
 ![image](https://hackmd.io/_uploads/rJOIOPk4kx.png)
-##### Consider the above CFG and OpSem. Assume OCaml's typing system. Determine whether whether they would fail in the Lexer, Parser, Evaluator, or are Valid expressions.
+##### Consider the above CFG and OpSem. Assume OCaml's typing system. Determine whether they would fail in the Lexer, Parser, Evaluator, or are Valid expressions.
 ```
 1) 3 10 ?
 2) true false not
@@ -324,7 +324,7 @@ fn main(){
 #### 9. OCaml/Rust Coding
 
 *I would strongly urge you to try these problems on your own!*
-##### OCaml: Given an int list list matrix, return the sum of the diagonal elements of the matrix. Assume the matrix we give you is a square matrix $(m \times m)$.
+##### OCaml: Given an int list list matrix, return the sum of the diagonal elements of the matrix. Assume the matrix we give you is a square matrix $(m \times m)$. Do not use any other List module functions other than map, fold_left, or fold_right.
 ```{ocaml}
 ex.
 [[1; 2; 3];
@@ -336,7 +336,8 @@ let rec sum_diag matrix = ...
 
 <details>
   <summary><b>Solution</b></summary>
-    
+
+    Solution 1:
     let rec sum_diag matrix = 
       let _, sum = 
         let helper_1 (row_index, sum) row = 
@@ -347,6 +348,17 @@ let rec sum_diag matrix = ...
           (row_index + 1, element + sum) in
         fold_left helper_1 (0, 0) matrix in
       sum
+
+      Solution 2:
+      let rec helper lst target curr = match lst with 
+        |[] -> failwith "element not found"
+        |x::xs -> if curr = target then x else (helper xs target (curr + 1));;
+        
+      (* our accumulator is a tuple with the sum as the first value, and the index as the second value *)
+      (* we use a helper function that gets us the value in the list at the index 'target' *)
+      (* small note, fst gets you the first value in a tuple and snd gets you the second value *) 
+      let rec sum_diag matrix = fst (List.fold_left (fun acc x -> let value = (helper x (snd acc) 0)
+                                in (fst acc + value, snd acc + 1)) (0,0) matrix)
 </details>
 
 ##### Rust: Given a Vec<Vec<u32>> matrix, return the sum of the diagonal elements of the matrix. Assume the matrix we give you is a square matrix $(m \times m)$.
